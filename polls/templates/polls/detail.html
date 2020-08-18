@@ -1,3 +1,7 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
 <h1>{{ question.question_text }}</h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
@@ -11,4 +15,4 @@
 <input type="submit" value="Vote">
 </form>
 
-<a href="/polls/">&lt; go back</a>
+<a href="{% url 'polls:index'%}">&lt; go back</a>
