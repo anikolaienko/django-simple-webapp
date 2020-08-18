@@ -5,3 +5,11 @@ Simplistic web application written in Python3 using Django framework.
 I have spent quite some time learning and practicing Algorithms, Data Structures, System Design,Distributed Systems, Operating Systems, preparing to FAANG interviews. This is my come back to web development.
 
 If you are interested in my profile, find more information about me on [andnik.com](http://andnik.com)
+
+## Deploy on dev environment
+* Install `virtualenv`: `pip install virtualenv`
+* Create virtual environment: `virtualenv -p 3.8 .venv`
+* Run virtual environment: `. ./.venv/bin/activate`
+* Install requirements: `pip install -r requirements.txt`
+* Run migrations: `./manage.py migrate`
+* Run dev server: `./manage.py runserver`
