@@ -1,8 +1,4 @@
 body {
+    padding-top: 10px;
     background-color: #fefefe;
-}
-
-li, a, label, input {
-    font-size: 20;
-    color: #1A2855;
 }

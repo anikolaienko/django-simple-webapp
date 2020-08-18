@@ -1,10 +1,11 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 
 from .models import Question, Choice
+from .forms import RegisterForm
 
 # Create your views here.
 class IndexView(generic.ListView):
@@ -49,3 +50,16 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+
+# Create your views here.
+def register(request):
+    if request.method == "POST":
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('polls:index')
+        return render(request, 'polls/register.html', {"form":form, "errors":form.error_messages})
+    else:
+	    form = RegisterForm()
+
+    return render(request, 'polls/register.html', {"form":form})
