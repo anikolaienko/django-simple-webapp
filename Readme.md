@@ -13,3 +13,14 @@ If you are interested in my profile, find more information about me on [andnik.c
 * Install requirements: `pip install -r requirements.txt`
 * Run migrations: `./manage.py migrate`
 * Run dev server: `./manage.py runserver`
+
+## Run tests
+```
+./manage.py test polls
+```
+
+## Check coverage
+```
+coverage run --source='polls' manage.py test poll
+coverage report
+```
