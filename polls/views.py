@@ -58,7 +58,7 @@ def register(request):
         if form.is_valid():
             form.save()
             return redirect('polls:index')
-        return render(request, 'polls/register.html', {"form":form, "errors":form.error_messages})
+        # return render(request, 'polls/register.html', {"form":form, "errors":form.error_messages})
     else:
 	    form = RegisterForm()
 
