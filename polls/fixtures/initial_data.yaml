@@ -1,13 +1,76 @@
 -   model: "django.contrib.auth.models.User"
-    pk: 1,
+    pk: 1
     fields:
         username: Admin
         email: admin@gmail.com
         password: admin
 -   model: "django.contrib.auth.models.User"
-    pk: 2,
+    pk: 2
     fields:
         username: TestUser
         email: testuser@gmail.com
         password: testuser
--   model: "polls"
+-   model: "polls.models.Poll"
+    pk: 1
+    fields:
+        title: "How to become successful?"
+        author_id: 1
+-   model: "polls.models.Poll"
+    pk: 2
+    fields:
+        title: "How to workout effectively?"
+        author_id: 1
+-   model: "polls.models.Question"
+    pk: 1
+    fields:
+        question_text: "Are you successful now?"
+        poll_id: 1
+        order_id: 1
+-   models: "polls.models.Question"
+    pk: 2
+    fields:
+        question_text: "Do you think you will be successful?"
+        poll_id: 1
+        order_id: 2
+-   models: "polls.models.Choice"
+    pk: 1
+    fields:
+        question_id: 1
+        choice_text: "Yes"
+        votes: 0
+-   models: "polls.models.Choice"
+    pk: 2
+    fields:
+        question_id: 1
+        choice_text: "No"
+        votes: 0
+-   models: "polls.models.Choice"
+    pk: 3
+    fields:
+        question_id: 2
+        choice_text: "Yes"
+        votes: 0
+-   models: "polls.models.Choice"
+    pk: 4
+    fields:
+        question_id: 2
+        choice_text: "No"
+        votes: 0
+-   models: "polls.models.Question"
+    pk: 3
+    fields:
+        question_text: "Are you happy?"
+        poll_id: 2
+        order_id: 1
+-   models: "polls.models.Choice"
+    pk: 5
+    fields:
+        question_id: 3
+        choice_text: "Yes"
+        votes: 0
+-   models: "polls.models.Choice"
+    pk: 6
+    fields:
+        question_id: 3
+        choice_text: "No"
+        votes: 0
