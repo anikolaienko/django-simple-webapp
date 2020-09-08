@@ -1,74 +1,84 @@
--   model: "django.contrib.auth.models.User"
+-   model: "auth.User"
     pk: 1
     fields:
         username: Admin
         email: admin@gmail.com
         password: admin
--   model: "django.contrib.auth.models.User"
+-   model: "auth.User"
     pk: 2
     fields:
         username: TestUser
         email: testuser@gmail.com
         password: testuser
--   model: "polls.models.Poll"
+-   model: "polls.Poll"
     pk: 1
     fields:
         title: "How to become successful?"
         author_id: 1
--   model: "polls.models.Poll"
+        created_at: "2020-09-08"
+        updated_at: "2020-09-08"
+-   model: "polls.Poll"
     pk: 2
     fields:
         title: "How to workout effectively?"
         author_id: 1
--   model: "polls.models.Question"
+        created_at: "2020-09-08"
+        updated_at: "2020-09-08"
+-   model: "polls.Question"
     pk: 1
     fields:
         question_text: "Are you successful now?"
         poll_id: 1
         order_id: 1
--   models: "polls.models.Question"
+        created_at: "2020-09-08"
+        updated_at: "2020-09-08"
+-   model: "polls.Question"
     pk: 2
     fields:
         question_text: "Do you think you will be successful?"
         poll_id: 1
         order_id: 2
--   models: "polls.models.Choice"
+        created_at: "2020-09-08"
+        updated_at: "2020-09-08"
+-   model: "polls.Choice"
     pk: 1
     fields:
         question_id: 1
         choice_text: "Yes"
         votes: 0
--   models: "polls.models.Choice"
+-   model: "polls.Choice"
     pk: 2
     fields:
         question_id: 1
         choice_text: "No"
         votes: 0
--   models: "polls.models.Choice"
+-   model: "polls.Choice"
     pk: 3
     fields:
         question_id: 2
         choice_text: "Yes"
         votes: 0
--   models: "polls.models.Choice"
+-   model: "polls.Choice"
     pk: 4
     fields:
         question_id: 2
         choice_text: "No"
         votes: 0
--   models: "polls.models.Question"
+-   model: "polls.Question"
     pk: 3
     fields:
         question_text: "Are you happy?"
         poll_id: 2
         order_id: 1
--   models: "polls.models.Choice"
+        created_at: "2020-09-08"
+        updated_at: "2020-09-08"
+-   model: "polls.Choice"
     pk: 5
     fields:
         question_id: 3
         choice_text: "Yes"
         votes: 0
--   models: "polls.models.Choice"
+-   model: "polls.Choice"
     pk: 6
     fields:
         question_id: 3
