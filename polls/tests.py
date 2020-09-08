@@ -9,17 +9,17 @@ from .models import Question
 class QuestionModelTests(TestCase):
     def test_was_published_recently_with_future_question(self):
         time = timezone.now() + timedelta(days=30)
-        future_question = Question(pub_date=time)
+        future_question = Question(created_at=time)
         self.assertFalse(future_question.was_published_recently())
 
     def test_was_published_recently_with_old_question(self):
         time = timezone.now() - timedelta(days=1, seconds=1)
-        old_question = Question(pub_date = time)
+        old_question = Question(created_at=time)
         self.assertFalse(old_question.was_published_recently())
 
     def test_was_published_recently_with_recent_question(self):
         time = timezone.now() - timedelta(hours=23, minutes=59, seconds=58)
-        recent_question = Question(pub_date=time)
+        recent_question = Question(created_at=time)
         self.assertTrue(recent_question.was_published_recently())
 
 def create_question(question_text, days):
@@ -29,7 +29,7 @@ def create_question(question_text, days):
     in the past, positive for questions that have yet to be published).
     """
     time = timezone.now() + timedelta(days=days)
-    return Question.objects.create(question_text=question_text, pub_date=time)
+    return Question.objects.create(question_text=question_text, created_at=time)
 
 class QuestionIndexViewTests(TestCase):
     def test_no_questions(self):
@@ -43,7 +43,7 @@ class QuestionIndexViewTests(TestCase):
 
     def test_past_question(self):
         """
-        Questions with a pub_date in the past are displayed on the
+        Questions with a created_at in the past are displayed on the
         index page.
         """
         create_question(question_text="Past question.", days=-30)
@@ -55,7 +55,7 @@ class QuestionIndexViewTests(TestCase):
 
     def test_future_question(self):
         """
-        Questions with a pub_date in the future aren't displayed on
+        Questions with a created_at in the future aren't displayed on
         the index page.
         """
         create_question(question_text="Future question.", days=30)
@@ -91,7 +91,7 @@ class QuestionIndexViewTests(TestCase):
 class QuestionDetailViewTests(TestCase):
     def test_future_question(self):
         """
-        The detail view of a question with a pub_date in the future
+        The detail view of a question with a created_at in the future
         returns a 404 not found.
         """
         future_question = create_question(question_text='Future question.', days=5)
@@ -101,7 +101,7 @@ class QuestionDetailViewTests(TestCase):
 
     def test_past_question(self):
         """
-        The detail view of a question with a pub_date in the past
+        The detail view of a question with a created_at in the past
         displays the question's text.
         """
         past_question = create_question(question_text='Past Question.', days=-5)

@@ -1,0 +1,13 @@
+-   model: "django.contrib.auth.models.User"
+    pk: 1,
+    fields:
+        username: Admin
+        email: admin@gmail.com
+        password: admin
+-   model: "django.contrib.auth.models.User"
+    pk: 2,
+    fields:
+        username: TestUser
+        email: testuser@gmail.com
+        password: testuser
+-   model: "polls"

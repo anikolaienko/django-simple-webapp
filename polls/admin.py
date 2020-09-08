@@ -10,11 +10,11 @@ class ChoiceInline(admin.TabularInline):
 class QuestionAdmin(admin.ModelAdmin):
     fieldsets = [
         (None,               {'fields': ['question_text']}),
-        ('Date information', {'fields': ['pub_date']}),
+        ('Date information', {'fields': ['created_at']}),
     ]
-    list_display = ('question_text', 'pub_date', 'was_published_recently')
+    list_display = ('question_text', 'created_at', 'was_published_recently')
     inlines = [ChoiceInline]
-    list_filter = ['pub_date']
+    list_filter = ['created_at']
     search_fields = ['question_text']
 
 admin.site.register(Question, QuestionAdmin)
