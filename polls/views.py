@@ -18,6 +18,14 @@ class IndexView(generic.ListView):
             created_at__lte=timezone.now()
         ).order_by('-created_at')[:5]
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.request.user.is_authenticated and self.request.GET.get('my'):
+            context['list_title'] = 'List of my polls'
+        else:
+            context['list_title'] = 'List of all polls'
+        return context
+
 class DetailView(generic.DetailView):
     model = Question
     template_name = 'polls/detail.html'

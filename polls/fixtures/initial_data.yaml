@@ -1,15 +1,15 @@
 -   model: "auth.User"
     pk: 1
     fields:
-        username: Admin
+        username: admin
         email: admin@gmail.com
-        password: admin
+        password: "pbkdf2_sha256$216000$Oeamf0uktbaA$bSs3a1I1LtGjimgS/v/vzL2ukF5UDmVcYu3S6d1YQQE="
 -   model: "auth.User"
     pk: 2
     fields:
-        username: TestUser
+        username: testuser
         email: testuser@gmail.com
-        password: testuser
+        password: "pbkdf2_sha256$216000$aAzF19wTQkmN$ZDzqxaYyu/niaCS96e0JuYO4BkBFsdAgIpnrJQGBMxs="
 -   model: "polls.Poll"
     pk: 1
     fields:

@@ -12,6 +12,7 @@ If you are interested in my profile, find more information about me on [andnik.c
 * Run virtual environment: `. ./.venv/bin/activate`
 * Install requirements: `pip install -r requirements.txt`
 * Run migrations: `./manage.py migrate`
+* Seed test data: `./manage.py load_data initial_data`
 * Run dev server: `./manage.py runserver`
 
 ## Run tests
