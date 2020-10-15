@@ -10,6 +10,7 @@ urlpatterns = [
     path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),
     path('<int:question_id>/vote/', views.vote, name='vote'),
 
+    path('create', views.PollCreateView.as_view(), name='create'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/login', auth_views.LoginView.as_view(template_name='polls/login.html'), name='login'),
     path('accounts/register', views.register, name='register')
